@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Peluqueria Na{% endblock %}
+
+{% block content %}
+
+{% if profesionales %}
+  <ul>
+    {% for profesional in profesionales %}
+      <li>{{ profesional.nombre }} {{ profesional.apellido }} - {{ profesional.nombre_servicio }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No hay profesionales</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href='{% static "css/profesional.css"%}'>
+
+
+    <title> {% block title%}Peluqueria Na {% endblock %} </title>
+</head>
+<body class="body">
+    <nav class="nav">
+        <ul class= 'navegador'>
+            <li class="lista-nav"><a>Servicios</a></li>
+            <li class="lista-nav"><a>Profesional</a></li>
+        <!--<li>Fecha</li>
+            <li>Hora</li>
+            <li>Confirmar</li>
+        -->
+        </ul>
+
+    </nav>
+    <div class="div_block">
+        {% block content %}
+            <p>Base.hmtl</p>
+        {% endblock %}
+    </div>
+    <footer class = 'footer_fo'>
+        <div class="legal">
+            <span>todos los derechos reservados © 2023</span>
+            <a> Realizado por Joaquin Sosa</a>
+        </div>    
+        <div class="links">
+            <a href="mailto:joaquinsosa@gmail.com" target="_blank" class="link-contacto">joaquinsosa4162@gmail.com</a>
+            <a href="https://www.linkedin.com/in/joaquinsosa4162/" target="_blank" class="link-contacto">linkedin</a>
+            <a href="https://github.com/joaquin4162" target="_blank" class="link-contacto">GitHub</a>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
