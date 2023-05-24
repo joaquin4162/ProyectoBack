@@ -36,6 +36,7 @@ PROJECT_APPS = [
     'apps.profesional',
     'apps.servicio',
     'apps.turno',
+    'apps.profesionalservicio',
 
 ]
 

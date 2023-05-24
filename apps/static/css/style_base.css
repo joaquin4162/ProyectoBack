@@ -1,0 +1,36 @@
+#body {
+    background-color: black;
+}
+
+
+
+#navegador {
+    color: white;
+}
+
+#navegador .lista-nav {
+    display: inline;
+    padding-right: 15px;
+}
+
+
+#navegador :visited{
+    color:white;
+}
+#navegador :hover{
+    color: rgb(255, 1, 192);
+
+
+}
+
+
+.div_block {
+    color:white;
+}
+
+
+
+#footer_fo {
+    color:white;
+
+}

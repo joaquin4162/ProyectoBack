@@ -1,10 +1,12 @@
 from django.db import models
+from datetime import timedelta
 
 # Create your models here.
 
 class Servicio(models.Model):
     nombre = models.CharField(max_length=255)
     precio = models.FloatField()
+    duracion = models.DurationField(default = timedelta(minutes=30))
     is_deleted = models.BooleanField(default=False)
 
 

@@ -6,9 +6,11 @@
 {% block content %}
 
 {% if profesionales %}
+  <h1>Profesionales Disponibles</h1>
+  <p>Haga click en un profesional para seleccionar los servicios disponibles</p>
   <ul>
     {% for profesional in profesionales %}
-      <li>{{ profesional.nombre }} {{ profesional.apellido }} - {{ profesional.nombre_servicio }}</li>
+    <li><a href="{% url 'profesionalservicio:lista_servicios_profesionales' profesional.id %}">{{ profesional.nombre }} {{ profesional.apellido }}</a></li>
     {% endfor %}
   </ul>
 {% else %}

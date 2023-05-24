@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Peluqueria Na{% endblock %}
+{% block title %}Pelu-Query-a{% endblock %}
 
 {% block content %}
     <h1> Servicios</h1>
     <ul>
         {% for servicio in servicios %}
             {% if not servicio.is_deleted %}
-                <li> {{servicio.nombre}} - {{servicio.precio}} </li>
+                <li> {{servicio.nombre}} - ${{servicio.precio}} </li>
             {% endif %}
         {% endfor %}
 

@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href='{% static "css/profesional.css"%}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/style_base.css"%}'>
 
 
-    <title> {% block title%}Peluqueria Na {% endblock %} </title>
+    <title> {% block title%}Pelu-Query-a {% endblock %} </title>
 </head>
-<body class="body">
+<body id="body">
     <nav class="nav">
-        <ul class= 'navegador'>
-            <li class="lista-nav"><a>Servicios</a></li>
-            <li class="lista-nav"><a>Profesional</a></li>
+        <ul id= 'navegador'>
+            <li class="lista-nav"><a href="{% url 'lista_profesionales' %}" >Profesional</a></li>
+            <li class="lista-nav"><a href="{% url 'lista_servicios' %}">Servicios</a></li>
+
         <!--<li>Fecha</li>
             <li>Hora</li>
             <li>Confirmar</li>
@@ -28,7 +29,7 @@
             <p>Base.hmtl</p>
         {% endblock %}
     </div>
-    <footer class = 'footer_fo'>
+    <footer id = 'footer_fo'>
         <div class="legal">
             <span>todos los derechos reservados © 2023</span>
             <a> Realizado por Joaquin Sosa</a>
