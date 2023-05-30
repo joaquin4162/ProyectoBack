@@ -14,6 +14,9 @@ class Servicio(models.Model):
         return self.nombre
     
 
+    def delete(self):
+        self.is_deleted = True
+        self.save()
 
 # agregar agenta y usuario como aplicacion
 # agenda se va a vincular a los turnos, los turnos se tienen que chekear una agenda, y esta agenda le va a pertenecer

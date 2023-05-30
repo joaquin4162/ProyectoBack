@@ -2,8 +2,6 @@
     background-color: black;
 }
 
-
-
 #navegador {
     color: white;
 }
@@ -12,7 +10,6 @@
     display: inline;
     padding-right: 15px;
 }
-
 
 #navegador :visited{
     color:white;
@@ -26,8 +23,8 @@
 
 .div_block {
     color:white;
+    text-decoration: none;
 }
-
 
 
 #footer_fo {
