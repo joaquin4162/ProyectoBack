@@ -26,5 +26,5 @@ urlpatterns = [
 
     path('profesionalservicio/', include('apps.profesionalservicio.urls')),
 
-
+    path('users/', include('apps.usuario.urls')),
 ]

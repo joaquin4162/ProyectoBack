@@ -5,3 +5,4 @@ class ServicioForm(forms.ModelForm):
     class Meta:
         model = Servicio
         fields = ['nombre', 'precio', 'duracion']
+

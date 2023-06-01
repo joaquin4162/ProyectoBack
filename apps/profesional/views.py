@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Profesional
 
 
 # Create your views here.
 
-
-def lista_profesionales(request):
-    profesionales = Profesional.objects.all()
-    context = {'profesionales': profesionales}
-    return render(request,'lista_profesionales.html', context)
+class ProfesionalesListView(ListView):
+    template_name = 'lista_profesionales.html'
+    context_object_name = 'profesionales'
+    queryset = Profesional.objects.all()

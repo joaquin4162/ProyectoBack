@@ -33,7 +33,7 @@ class CrearServicioView(View):
         form = ServicioForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('lista_servicios')
+            return redirect('servicio:lista_servicios')
         context = {'form': form}
         return render(request, 'crear_servicio.html', context)
     
@@ -50,7 +50,7 @@ class ServicioDeleteView(DeleteView):
     def post(self, request, pk):
         servicio = Servicio.objects.get(pk=pk)
         servicio.delete()
-        return redirect('lista_servicios')
+        return redirect('servicio:lista_servicios')
 
 
 class ServicioBorradosView(ListView):
@@ -66,4 +66,4 @@ class ServicioActivarView(View):
         servicio = Servicio.objects.get(pk=pk)
         servicio.is_deleted = False
         servicio.save()
-        return redirect('lista_servicios')
+        return redirect('servicio:lista_servicios')

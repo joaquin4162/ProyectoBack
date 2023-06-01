@@ -8,7 +8,7 @@
     <ul>
       {% for servicio in servicios %}
         <li>{{ servicio.nombre }} - ${{ servicio.precio }}</li>
-        <form action="{% url 'activar_servicio' servicio.id %}" method="post">
+        <form action="{% url 'servicio:activar_servicio' servicio.id %}" method="post">
           {% csrf_token %}
           <button type="submit">Activar</button>
         </form>

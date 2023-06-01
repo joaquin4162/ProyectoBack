@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import ListaServiciosView, CrearServicioView, ServicioDeleteView, ServicioActivarView, ServicioBorradosView
 
+app_name = 'servicio'
+
 urlpatterns= [
     path('lista/', ListaServiciosView.as_view(), name = 'lista_servicios'),
     path('crear/', CrearServicioView.as_view(), name='crear_servicio'),

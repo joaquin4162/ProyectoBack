@@ -37,6 +37,7 @@ PROJECT_APPS = [
     'apps.servicio',
     'apps.turno',
     'apps.profesionalservicio',
+    'apps.usuario',
 
 ]
 
@@ -67,7 +68,8 @@ ROOT_URLCONF = 'Peluqueria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'apps/template/'),],
+        'DIRS': [os.path.join(BASE_DIR, 'apps/template/'),
+                 os.path.join(BASE_DIR, 'apps/usuario/template'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -150,3 +152,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIRS= (os.path.join(BASE_DIR, 'apps/static/'),)
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Backend de autenticación por defecto de Django
+]
