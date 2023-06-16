@@ -16,13 +16,9 @@
         <ul id= 'navegador'>
             <li class="lista-nav"><a href="{% url 'profesional:lista_profesionales' %}" >Profesional</a></li>
             <li class="lista-nav"><a href="{% url 'servicio:lista_servicios' %}">Servicios</a></li>
-            <li class="ingreso"><a href="{% url 'usuario:login' %}">Ingresar</a></li>
-            <li class="logout"><a href="{% url 'usuario:logout' %}">Salir</a></li>
-            
-        <!--<li>Fecha</li>
-            <li>Hora</li>
-            <li>Confirmar</li>
-        -->
+            <li class="lista-nav"><a href="{% url 'accounts:login' %}">Iniciar sersión</a></li>
+            <li class="lista-nav"><a href="{% url 'accounts:logout' %}">Cerrar sesión</a></li>
+
         </ul>
 
     </nav>

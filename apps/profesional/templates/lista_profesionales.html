@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block title %}Pelu-Query-a{% endblock %}
@@ -10,11 +9,22 @@
   <p>Haga click en un profesional para seleccionar los servicios disponibles</p>
   <ul>
     {% for profesional in profesionales %}
-    <li><a href="{% url 'profesionalservicio:lista_servicios_profesionales' profesional.id %}">{{ profesional.nombre }} {{ profesional.apellido }}</a></li>
+      {% if not profesional.is_deleted %}
+        <li><a href="{% url 'profesionalservicio:lista_servicios_profesionales' profesional.id %}">{{ profesional.nombre }} {{ profesional.apellido }}</a></li>
+        <form method="post" action="{% url 'profesional:borrar_profesional' profesional.id%}">
+            {%csrf_token%}
+            <button type="sumbit">borrar</button>
+        </form>
+      {% else %}
+        <p>No hay profesionales</p>
+      {% endif %}
     {% endfor %}
   </ul>
 {% else %}
   <p>No hay profesionales</p>
 {% endif %}
+
+<a href="{% url 'profesional:crear_profesional' %}">Dar de alta nuevo profesional</a>
+<a href="{% url 'profesional:profesionales_borrados' %}">Reactivar profesional</a>
 
 {% endblock %}

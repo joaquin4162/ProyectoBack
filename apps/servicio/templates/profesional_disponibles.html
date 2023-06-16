@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Profesionales disponibles para {{ servicio.nombre }}{% endblock %}
+
+{% block content %}
+  <h1>Profesionales disponibles para {{ servicio.nombre }}</h1>
+  {% if profesionales_disponibles %}
+    <ul>
+      {% for ps in profesionales_disponibles %}
+        <li>{{ ps.profesional.nombre }} {{ ps.profesional.apellido }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay profesionales disponibles</p>
+  {% endif %}
+{% endblock %}

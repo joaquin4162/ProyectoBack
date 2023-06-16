@@ -26,5 +26,8 @@ urlpatterns = [
 
     path('profesionalservicio/', include('apps.profesionalservicio.urls')),
 
-    path('users/', include('apps.usuario.urls')),
+    path('accounts/', include('apps.accounts.urls')),
+
+    path('turno/', include('apps.turno.urls')),
+
 ]

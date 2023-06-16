@@ -6,6 +6,7 @@ from django.views.generic import DeleteView, ListView
 from django.urls import reverse_lazy
 from .forms import ServicioForm
 from .models import Servicio
+from apps.profesionalservicio.models import ProfesionalServicio
 
 # Create your views here.
 
@@ -38,12 +39,7 @@ class CrearServicioView(View):
         return render(request, 'crear_servicio.html', context)
     
 
-# class EliminarServicioView(View):
-#     def post(self, request, servicio_id):
-#         servicio = Servicio.objects.get(id=servicio_id)
-#         servicio.is_deleted = True
-#         servicio.save()
-#         return redirect('lista_servicios')
+
 
 
 class ServicioDeleteView(DeleteView):
@@ -67,3 +63,16 @@ class ServicioActivarView(View):
         servicio.is_deleted = False
         servicio.save()
         return redirect('servicio:lista_servicios')
+    
+
+class ProfesionalesDisponiblesView(View):
+    template_name = 'profesional_disponibles.html'
+
+    def get(self, request, servicio_id):
+        servicio = Servicio.objects.get(pk=servicio_id)
+        profesionales_disponibles = servicio.profesionalservicio_set.all()
+        context = {
+            'servicio': servicio,
+            'profesionales_disponibles': profesionales_disponibles
+        }
+        return render(request, self.template_name, context)

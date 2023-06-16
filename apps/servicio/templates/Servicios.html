@@ -7,8 +7,12 @@
     <ul>
         {% for servicio in servicios %}
             {% if not servicio.is_deleted %}
-                <li> {{servicio.nombre}} - ${{servicio.precio}} </li>
-                <form method="post" action="{% url 'servicio:borrar_servicio' servicio.id%}">
+                <li>
+                    <a href="{% url 'servicio:profesionales_disponibles' servicio.id %}">
+                        {{ servicio.nombre }} - ${{ servicio.precio }}
+                    </a>
+                </li>
+                <form method="post" action="{% url 'servicio:borrar_servicio' servicio.id %}">
                     {% csrf_token %}
                     <button type="submit">Borrar</button>
                 </form>
@@ -18,9 +22,3 @@
     <a href="{% url 'servicio:crear_servicio' %}">Crear servicio nuevo</a>
     <a href="{% url 'servicio:servicios_borrados' %}">Reactivar Servicio</a>
 {% endblock %}
-
-
-
-
-
-

@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}Servicios de {{ profesional_servicios.0.profesional.nombre }} {{ profesional_servicios.0.profesional.apellido }}{% endblock %}
-
 {% block content %}
-  <h1>Servicios de {{ profesional_servicios.0.profesional.nombre }} {{ profesional_servicios.0.profesional.apellido }}</h1>
+  <h1>Servicios del profesional</h1>
+
   {% if profesional_servicios %}
     <ul>
       {% for ps in profesional_servicios %}
@@ -12,5 +11,11 @@
     </ul>
   {% else %}
     <p>No hay servicios disponibles</p>
+  {% endif %}
+
+  {% if profesional_servicios %}
+    <a href="{{ vincular_url }}">Vincular nuevo servicio</a>
+  {% else %}
+    <a href="{{ vincular_url }}">Vincular nuevo servicio</a>
   {% endif %}
 {% endblock %}

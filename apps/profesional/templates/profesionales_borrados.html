@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>Profesionales dados de baja</h1>
+  {% if profesionales %}
+    <ul>
+      {% for profesional in profesionales %}
+        <li>{{ profesional.nombre }} {{ profesional.apellido }}</li>
+        <form action="{% url 'profesional:activar_profesional' profesional.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit">Activar</button>
+        </form>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay profesionales borrados</p>
+  {% endif %}
+{% endblock %}

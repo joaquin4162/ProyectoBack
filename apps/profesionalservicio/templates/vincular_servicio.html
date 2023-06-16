@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Vincular nuevo servicio{% endblock %}
+
+{% block content %}
+  <h1>Vincular nuevo servicio</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+  
+  {% for message in messages %}
+    <div class="alert alert-danger">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endblock %}

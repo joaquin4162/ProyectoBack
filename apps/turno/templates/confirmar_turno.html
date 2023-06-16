@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar turno {% endblock %}
+
+{% block content %}
+  <h1>Confirmar turno</h1>
+  <p>Aquí puedes mostrar la información del turno seleccionado y permitir al usuario confirmar la reserva.</p>
+  <form method="POST" action="{% url 'turno:guardar_turno' %}">
+    {% csrf_token %}
+    <!-- Agrega aquí los campos adicionales del formulario de confirmación -->
+    <button type="submit">Confirmar</button>
+  </form>
+{% endblock %}

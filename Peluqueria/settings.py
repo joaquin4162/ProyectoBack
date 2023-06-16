@@ -37,7 +37,7 @@ PROJECT_APPS = [
     'apps.servicio',
     'apps.turno',
     'apps.profesionalservicio',
-    'apps.usuario',
+    'apps.accounts',
 
 ]
 
@@ -69,7 +69,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'apps/template/'),
-                 os.path.join(BASE_DIR, 'apps/usuario/template'),],
+                 os.path.join(BASE_DIR, 'apps/accounts/template'),
+                 os.path.join(BASE_DIR, 'apps/servicio/template'),
+                 os.path.join(BASE_DIR, 'apps/turno/template'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -155,5 +158,7 @@ STATICFILES_DIRS= (os.path.join(BASE_DIR, 'apps/static/'),)
 
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',  # Backend de autenticación por defecto de Django
+    'django.contrib.auth.backends.ModelBackend',
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'

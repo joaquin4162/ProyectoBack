@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Seleccionar fecha{% endblock %}
+
+{% block content %}
+  <h1>Seleccionar fecha</h1>
+  <ul>
+    {% for fecha in fechas %}
+      <li><a href="{% url 'turno:seleccionar_horario' fecha.id %}">{{ fecha.fecha }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
