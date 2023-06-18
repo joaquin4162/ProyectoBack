@@ -6,7 +6,11 @@
   {% if profesional_servicios %}
     <ul>
       {% for ps in profesional_servicios %}
-        <li>{{ ps.servicio.nombre }} - {{ ps.servicio.precio }}</li>
+        <li>
+          <a href="{% url 'turno:seleccionar_fecha' servicio_id=ps.servicio.id profesionalservicio_id=ps.id %}">
+            {{ ps.servicio.nombre }} - {{ ps.servicio.precio }}
+          </a>
+        </li>
       {% endfor %}
     </ul>
   {% else %}

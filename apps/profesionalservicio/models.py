@@ -1,7 +1,6 @@
 from django.db import models
 from apps.profesional.models import Profesional
 from apps.servicio.models import Servicio
-
 # Create your models here.
 
 class ProfesionalServicio(models.Model):

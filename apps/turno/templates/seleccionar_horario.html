@@ -8,9 +8,12 @@
   <ul>
     {% for horario in horarios %}
       <li>
-        <form method="POST" action="{% url 'turno:confirmar_turno' %}">
+        <form method="POST" action="{% url 'turno:confirmar_turno' fecha_id=fecha.id horario_id=horario.id profesionalservicio_id=profesionalservicio.id %}">
+        
           {% csrf_token %}
+          <input type="hidden" name="fecha_id" value="{{ fecha.id }}">
           <input type="hidden" name="horario_id" value="{{ horario.id }}">
+          <input type="hidden" name="profesionalservicio_id" value="{{ profesionalservicio.id }}">
           <button type="submit">{{ horario.horario }}</button>
         </form>
       </li>

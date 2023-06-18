@@ -33,7 +33,7 @@ class LoginView(View):
         else:
             return render(request, 'login.html', {'error': 'Credenciales inválidas'})
     
-    def logout_view(self, request):
+class LogoutView(View):
+    def get(self, request):
         logout(request)
         return redirect('profesional:lista_profesionales')
-    

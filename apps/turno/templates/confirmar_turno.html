@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Confirmar turno {% endblock %}
+{% block title %}Confirmar turno{% endblock %}
 
 {% block content %}
   <h1>Confirmar turno</h1>
   <p>Aquí puedes mostrar la información del turno seleccionado y permitir al usuario confirmar la reserva.</p>
-  <form method="POST" action="{% url 'turno:guardar_turno' %}">
+  
+  <form method="POST" action="{% url 'turno:turno_confirmado' %}">
     {% csrf_token %}
-    <!-- Agrega aquí los campos adicionales del formulario de confirmación -->
+    
+    <p>Fecha: {{ fecha.fecha }}</p>
+    <p>Horario: {{ horario.horario }}</p>
+    <p>Profesional: {{ profesionalservicio.profesional.nombre }}</p>
+    <p>Servicio: {{ profesionalservicio.servicio.nombre }}</p>
+    
+    <input type="hidden" name="fecha_id" value="{{ fecha.id }}">
+    <input type="hidden" name="horario_id" value="{{ horario.id }}">
+    <input type="hidden" name="profesionalservicio_id" value="{{ profesionalservicio.id }}">
+    
     <button type="submit">Confirmar</button>
   </form>
 {% endblock %}

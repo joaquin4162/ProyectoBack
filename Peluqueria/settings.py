@@ -162,3 +162,18 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Host del servidor SMTP
+EMAIL_PORT = 587  # Puerto del servidor SMTP
+EMAIL_USE_TLS = True  # Usar TLS para la conexión segura
+EMAIL_HOST_USER = 'peluquerya2023@gmail.com'  # Tu dirección de correo electrónico
+EMAIL_HOST_PASSWORD = 'bijmhnulxsilvevd'  # Contraseña de tu correo electrónico
+
+
+DEFAULT_FROM_EMAIL = 'peluquerya2023@gmail.com'
+
+
+LOGIN_URL = '/accounts/logout/'

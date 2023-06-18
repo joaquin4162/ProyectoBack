@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Turno Confirmado{% endblock %}
+
+{% block content %}
+  <h1>Turno Confirmado</h1>
+  <p>Tu turno ha sido confirmado exitosamente.</p>
+  <p>Fecha: {{ turno.fecha.fecha }}</p>
+  <p>Horario: {{ turno.horario.horario }}</p>
+  <p>Profesional: {{ turno.profesional_servicio.profesional.nombre }}</p>
+  <p>Servicio: {{ turno.profesional_servicio.servicio.nombre }}</p>
+{% endblock %}
