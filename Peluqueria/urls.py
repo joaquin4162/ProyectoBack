@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import BaseView
+
+app_name = 'peluqueria'
 
 urlpatterns = [
+ 
     path('admin/', admin.site.urls),
+
+    path('', BaseView.as_view(), name='base' ),
 
     path('profesional/', include('apps.profesional.urls')),
 

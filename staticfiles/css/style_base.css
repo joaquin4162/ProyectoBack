@@ -1,0 +1,47 @@
+#body {
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+}
+
+/* Estilos para la versión de escritorio */
+.nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .lista-nav {
+    list-style: none;
+    display: inline;
+  }
+  
+  .lista-nav.nav-inicio,
+  .lista-nav.nav-cerrar {
+    margin-left: auto;
+  }
+  
+  .lista-nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+  }
+  
+  /* Estilos para la versión móvil */
+  /* @media (max-width: 600px) {
+    .nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .lista-nav {
+      display: none;
+    }
+  
+    .lista-nav.desplegable {
+      display: block;
+    }
+  
+    .lista-nav.desplegable a {
+      display: block;
+      text-align: center;
+    }
+  } */

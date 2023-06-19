@@ -6,7 +6,7 @@ from django.core.mail import send_mail, EmailMessage
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from apps.accounts.models import CustomUser
-
+from datetime import date
 
 class GenerarFechasView(View):
     def get(self, request):
@@ -18,11 +18,11 @@ class GenerarFechasView(View):
 
         mensaje_exito = "Las fechas se han generado exitosamente."
         return render(request, 'exito.html', {'mensaje': mensaje_exito, 'fechas_generadas': fechas_generadas})
-
 class SeleccionarFechaView(View):
     def get(self, request, servicio_id, profesionalservicio_id):
         profesionalservicio = ProfesionalServicio.objects.get(id=profesionalservicio_id)
-        fechas = Fecha.objects.filter(servicio_id=servicio_id)
+        today = date.today()
+        fechas = Fecha.objects.filter(servicio_id=servicio_id, fecha__gte=today)
         return render(request, 'seleccionar_fecha.html', {'fechas': fechas, 'servicio_id': servicio_id, 'profesionalservicio': profesionalservicio})
 
 class SeleccionarHorarioView(View):
