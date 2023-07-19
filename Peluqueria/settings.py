@@ -96,13 +96,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'Peluqueria',
         'USER': 'postgres',
-        'PASSWORD':'password',
-        'HOST': '127.0.0.1',
+        'PASSWORD':'yourpass',
+        'HOST': 'HostIP',
         'DATABASE_PORT': '5432'
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -169,11 +168,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # Host del servidor SMTP
 EMAIL_PORT = 587  # Puerto del servidor SMTP
 EMAIL_USE_TLS = True  # Usar TLS para la conexión segura
-EMAIL_HOST_USER = 'peluquerya2023@gmail.com'  # Tu dirección de correo electrónico
-EMAIL_HOST_PASSWORD = 'bijmhnulxsilvevd'  # Contraseña de tu correo electrónico
+EMAIL_HOST_USER = 'email@email.com'  # Tu dirección de correo electrónico
+EMAIL_HOST_PASSWORD = 'hostpassword'  # Contraseña de tu correo electrónico
 
 
-DEFAULT_FROM_EMAIL = 'peluquerya2023@gmail.com'
+DEFAULT_FROM_EMAIL = 'email@email.com'
 
 
 LOGIN_URL = '/accounts/logout/'

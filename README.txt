@@ -14,8 +14,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'Peluqueria',
         'USER': 'postgres',
-        'PASSWORD':'password',
-        'HOST': '127.0.0.1',
+        'PASSWORD':'yourpass',
+        'HOST': 'HostIP',
         'DATABASE_PORT': '5432'
 
     }
